@@ -97,8 +97,8 @@
         <!-- <AddFriend ref="addFriendMethods" /> -->
         <!-- <GetFriendRequest /> -->
         <!-- <FirendBlack ref="firendModel" /> -->
-        <AddGroupUser ref="addGroupModel" />
-        <CreateGroup ref="createGroupModel" />
+        <!-- <AddGroupUser ref="addGroupModel" /> -->
+        <!-- <CreateGroup ref="createGroupModel" /> -->
         <!-- <VidoeSetting ref="videoSetting" /> -->
         <GroupRequest />
         <GroupInvite />
@@ -111,8 +111,8 @@
 import Vue from "vue";
 import MessageBox from "../../components/chat/index.vue";
 import Message from "../../components/chat/message.vue";
-import AddGroupUser from "../../components/group/addGroupUser.vue";
-import CreateGroup from "../../components/group/createGroup.vue";
+// import AddGroupUser from "../../components/group/addGroupUser.vue";
+// import CreateGroup from "../../components/group/createGroup.vue";
 import GroupRequest from "../../components/group/groupRequest.vue";
 import GroupInvite from "../../components/group/groupInvite.vue";
 import "./index.less";
@@ -264,8 +264,8 @@ export default {
     // AddFriend,
     // GetFriendRequest,
     // FirendBlack,
-    AddGroupUser,
-    CreateGroup,
+    // AddGroupUser,
+    // CreateGroup,
     // VidoeSetting,
     GroupRequest,
     GroupInvite
