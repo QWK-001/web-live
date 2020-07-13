@@ -1,6 +1,4 @@
-// import fetch from 'fetch'
 export const getLiveRooms = (option) => {
-    // const apiURL = `${option.api}/appserver/liverooms`;
     const apiURL = 'https://a1.easemob.com/appserver/liverooms';
     // let data = {
     //     cursor: option.cursor || '1',
@@ -27,6 +25,7 @@ export const getLiveRooms = (option) => {
     liveRooms
         .then(res => {
             console.log("res>>>", res);
+            option.callback && option.callback(res)
         })
     ["catch"](err => {
         console.error(err);

@@ -12,33 +12,8 @@
               <span class="username">{{userName}}</span>
             </span>
             <a-menu slot="overlay">
-              <!-- <a-menu-item @click="recEmedia">
-                <a href="javascript:;">音视频录制</a>
-              </a-menu-item>
-              <a-menu-item @click="GetFirendBlack">
-                <a href="javascript:;">好友黑名单</a>
-              </a-menu-item> -->
               <a-menu-item @click="toLogout">
                 <a href="javascript:;">退出</a>
-              </a-menu-item>
-            </a-menu>
-          </a-dropdown>
-        </span>
-
-        <span class="setting">
-          <a-dropdown>
-            <span class="ant-dropdown-link" href="#">
-              <a-icon type="plus-circle" />
-            </span>
-            <a-menu slot="overlay">
-              <a-menu-item @click="ulClick('1')">
-                <a href="javascript:;">添加好友</a>
-              </a-menu-item>
-              <a-menu-item @click="ulClick('2')">
-                <a href="javascript:;">申请入群</a>
-              </a-menu-item>
-              <a-menu-item @click="ulClick('3')">
-                <a href="javascript:;">创建群组</a>
               </a-menu-item>
             </a-menu>
           </a-dropdown>
@@ -52,11 +27,6 @@
         :style="{ lineHeight: '50px', background: '#434648', color: '#fff', textAlign: 'left'}"
         @click="contactTypeChange"
       >
-        <a-menu-item key="contact">
-          <a-icon type="user" class="navMenu-icon" />
-          <span class="navMenu-text">好友</span>
-          <div class="tip-style" v-if="getUnread('contact').contact">&nbsp;</div>
-        </a-menu-item>
         <a-menu-item key="group">
           <a-icon type="team" class="navMenu-icon" />
           <span class="navMenu-text">群组</span>
@@ -64,7 +34,7 @@
         </a-menu-item>
         <a-menu-item key="chatroom">
           <a-icon type="usergroup-add" class="navMenu-icon" />
-          <span class="navMenu-text">聊天室</span>
+          <span class="navMenu-text">直播聊天室</span>
         </a-menu-item>
       </a-menu>
     </a-layout-header>
@@ -84,7 +54,6 @@
         <!-- <MessageBox v-if="activeKey == 'chatroom'"  type="chatroom" />
         <MessageBox v-if="activeKey == 'group'" type="group" />-->
       </a-layout-sider>
-
       <a-layout-content style="overflow: visible">
         <Message
           :type="activeKey"
@@ -93,13 +62,6 @@
           :showUserList="showUserList"
           ref="messageList"
         />
-
-        <!-- <AddFriend ref="addFriendMethods" /> -->
-        <!-- <GetFriendRequest /> -->
-        <!-- <FirendBlack ref="firendModel" /> -->
-        <!-- <AddGroupUser ref="addGroupModel" /> -->
-        <!-- <CreateGroup ref="createGroupModel" /> -->
-        <!-- <VidoeSetting ref="videoSetting" /> -->
         <GroupRequest />
         <GroupInvite />
       </a-layout-content>
@@ -215,22 +177,6 @@ export default {
     addModalChange() {
       this.$data.showAddOptions = !this.$data.showAddOptions;
     },
-    ulClick(i) {
-      // this.addModalChange();
-      switch (i) {
-        case "1":
-          this.$refs.addFriendMethods.changeModal();
-          break;
-        case "2":
-          this.$refs.addGroupModel.changeGroupModel();
-          break;
-        case "3":
-          this.$refs.createGroupModel.changeCreateModel();
-          break;
-        default:
-          break;
-      }
-    },
     getUnread(type) {
       const chatList = this.chatList[type];
       let obj = {
@@ -261,12 +207,6 @@ export default {
   components: {
     MessageBox,
     Message,
-    // AddFriend,
-    // GetFriendRequest,
-    // FirendBlack,
-    // AddGroupUser,
-    // CreateGroup,
-    // VidoeSetting,
     GroupRequest,
     GroupInvite
   }

@@ -3,7 +3,7 @@
   <el-container>
 	<div class="login">
 		<div class="login-panel">
-			<div class="logo">Web IM</div>
+			<div class="logo">Web Live</div>
 			<van-cell-group>
 				<van-field v-model="username" equired placeholder="用户名"/>
 				<van-field v-model="password"  v-on:keyup.13="toLogin" type="password" placeholder="密码" required/>

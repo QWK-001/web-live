@@ -198,22 +198,28 @@ const Chat = {
 		},
 		onGetChatroomUserList: function (context, payload) {
 			var option = {
-				apiUrl: "https://a1.easemob.com",
-				pagenum: 1,                                 // 页数
-				pagesize: 20,                               // 每页个数
-				success: function(list){
+				// apiUrl: "https://a1.easemob.com",
+				// pagenum: 1,                                 // 页数
+				// pagesize: 20,                               // 每页个数
+				// success: function(list){
+				// 	context.commit("updateUserList", {
+				// 		userList: list.data,
+				// 		type: "chatroomUserList"
+				// 	});
+				// },
+				// error: function(){
+				// 	console.log("List chat room error");
+				// },
+				callback:function(list){
 					context.commit("updateUserList", {
-						userList: list.data,
+						userList: list.entities,
 						type: "chatroomUserList"
 					});
-				},
-				error: function(){
-					console.log("List chat room error");
 				}
 			};
-			WebIM.conn.getChatRooms(option);
+			// WebIM.conn.getChatRooms(option);
 
-			// getLiveRooms()
+			getLiveRooms(option)
 		},
 		// 获取当前聊天对象的记录 @payload： {key, type}
 		onGetCurrentChatObjMsg: function (context, payload) {

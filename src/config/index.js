@@ -10,7 +10,7 @@ export default {
 		lg: "1200px",
 		xl: "1600px"
 	},
-	name: "Web IM",
+	name: "Web Live",
 	logo: "",
 	SIDER_COL_BREAK: "sm", // md
 	SIDER_COL_WIDTH: 80,
