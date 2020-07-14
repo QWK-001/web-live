@@ -9,7 +9,7 @@ export const getLiveRooms = (option) => {
         headers: new Headers(
             {
                 'content-type': 'application/json',
-                'Authorization': 'Bearer ' + 'YWMtbAfbdrIeEeqi3VPWuPdihU1-S6DcShHjkNXh_7qs2vUSn6gAgHoR6pe7OaLWzq6yAwMAAAFyzEv-hwBPGgCT2AXchwHoGr4c47vTK_PaY_SQmI0oQAKpezF5ZMtVHA'
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
         )
     })

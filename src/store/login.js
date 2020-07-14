@@ -19,7 +19,11 @@ const Login = {
 				apiUrl: WebIM.config.apiURL,
 				user: payload.username,
 				pwd: payload.password,
-				appKey: WebIM.config.appkey
+				appKey: WebIM.config.appkey,
+				success(token){
+					console.log('登陆成功',token);
+					localStorage.setItem("token",token.access_token)
+				}
 			};
 			WebIM.conn.open(options);
 			localStorage.setItem("userInfo", JSON.stringify({ userId: payload.username, password: payload.password }));
@@ -27,6 +31,7 @@ const Login = {
 		onLogout: function (context) {
 			context.commit("setUserName", "");
 			localStorage.setItem("userInfo", "");
+			localStorage.setItem("token","")
 			WebIM.conn.close();
 		},
 		onRegister: function (context, payload) {
