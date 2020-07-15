@@ -1,9 +1,5 @@
 export const getLiveRooms = (option) => {
-    const apiURL = 'https://a1.easemob.com/appserver/liverooms';
-    // let data = {
-    //     cursor: option.cursor || '1',
-    //     limit: parseInt(option.limit) || 10
-    // }
+    const apiURL = 'https://a1.easemob.com/appserver/liverooms?limit=999';
     let liveRooms = fetch(apiURL, {
         method: 'GET',
         headers: new Headers(
@@ -11,7 +7,7 @@ export const getLiveRooms = (option) => {
                 'content-type': 'application/json',
                 'Authorization': 'Bearer ' + localStorage.getItem('token')
             },
-        )
+        ),
     })
         .then(response => {
             return response.json().then(json => ({ json, response }));

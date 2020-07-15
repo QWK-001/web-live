@@ -144,15 +144,25 @@
 }
 
 .messagebox-footer {
-	border-top   : 1px solid #d6dce0;
-	position     : absolute;
-	bottom       : 50px;
-	width        : 33%;
-	// height    : 150px;
-	color        : rgba(0, 0, 0, 0.65);
-	background   : #fff;
-	right: 60px;
-	opacity: .8;
+	border-bottom: 1px solid #d6dce0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 100px;
+    line-height: 50px;
+    outline: none;
+    margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    z-index: 1050;
+    color: rgba(0, 0, 0, 0.65);
+    background: #fff;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 35%;
+    opacity: 0.8;
+	float: right;
+	margin-top: 5px;
 
 	.footer-icon {
 		padding   : 15px 10px;
@@ -229,4 +239,34 @@
 	// 	left        : 2px;
 	// 	padding-left: 5px;
 	// }
+}
+
+#vp{
+	width: 60% !important;
+	float:left !important;
+	height:100% !important;
+}
+
+@media screen and (max-width: 800px){
+	.messagebox{
+		padding: 10px;
+	}
+	#vp{
+		height:45% !important;
+		width: 100% !important;
+	}
+	.messagebox .messagebox-header{
+		float: none;
+		width: 100%;
+	}
+	.messagebox .messagebox-content{
+		width: 100%;
+		float: none;
+		height: 30%
+	}
+	.messagebox-footer{
+		width: 100%;
+		line-height: 0;
+		float: none;
+	}
 }

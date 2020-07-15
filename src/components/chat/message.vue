@@ -1,7 +1,7 @@
 <template>
   <div class="messagebox" v-show="activedKey[type]!= ''">
     
-      <video-player :config="playerConfig" @playerInit="onPlayerInit" style="float:left;width:60%;height:100%;"></video-player>
+      <video-player :config="playerConfig" @playerInit="onPlayerInit"></video-player>
       <!-- <div class="messagebox-cake"> -->
       <div class="messagebox-header">
         <div>
