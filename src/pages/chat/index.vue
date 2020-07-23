@@ -51,8 +51,6 @@
         @breakpoint="onBreakpoint"
       >
         <MessageBox :type="activeKey" :select="select" ref="messageBox" />
-        <!-- <MessageBox v-if="activeKey == 'chatroom'"  type="chatroom" />
-        <MessageBox v-if="activeKey == 'group'" type="group" />-->
       </a-layout-sider>
       <a-layout-content style="overflow: visible">
         <Message
@@ -62,8 +60,6 @@
           :showUserList="showUserList"
           ref="messageList"
         />
-        <GroupRequest />
-        <GroupInvite />
       </a-layout-content>
     </a-layout>
   </a-layout>
@@ -73,10 +69,6 @@
 import Vue from "vue";
 import MessageBox from "../../components/chat/index.vue";
 import Message from "../../components/chat/message.vue";
-// import AddGroupUser from "../../components/group/addGroupUser.vue";
-// import CreateGroup from "../../components/group/createGroup.vue";
-import GroupRequest from "../../components/group/groupRequest.vue";
-import GroupInvite from "../../components/group/groupInvite.vue";
 import "./index.less";
 import { mapState, mapActions } from "vuex";
 export default {
@@ -88,23 +80,6 @@ export default {
       activeKey: "group",
       selectedItem: "",
       showAddOptions: false,
-      addList: [
-        {
-          name: "添加好友",
-          id: "1",
-          icon: "chat"
-        },
-        {
-          name: "申请入群",
-          id: "2",
-          icon: "friends"
-        },
-        {
-          name: "创建群组",
-          id: "3",
-          icon: "comment"
-        }
-      ],
       userName:
         localStorage.getItem("userInfo") &&
         JSON.parse(localStorage.getItem("userInfo")).userId,
@@ -145,10 +120,6 @@ export default {
         this.$data.collapsed = true;
       }
     },
-    // GetFirendBlack() {
-    //   this.onGetFirendBlack();
-    //   this.$refs.firendModel.changModel();
-    // },
     optionsVisibleChange() {
       this.$data.showSettingOptions = !this.$data.showSettingOptions;
     },
@@ -207,8 +178,6 @@ export default {
   components: {
     MessageBox,
     Message,
-    GroupRequest,
-    GroupInvite
   }
 };
 </script>

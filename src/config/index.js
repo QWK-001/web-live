@@ -10,7 +10,7 @@ export default {
 		lg: "1200px",
 		xl: "1600px"
 	},
-	name: "Web Live",
+	name: "环信直播聊天室",
 	logo: "",
 	SIDER_COL_BREAK: "sm", // md
 	SIDER_COL_WIDTH: 80,
